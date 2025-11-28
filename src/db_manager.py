@@ -27,7 +27,7 @@ class DBManager:
         """Получает список компаний и количество вакансий"""
         try:
             self.cur.execute("""
-                SELECT e.name, COUNT(v.vacancy_id) 
+                SELECT e.name, COUNT(v.vacancy_id)
                 FROM employers e
                 LEFT JOIN vacancies v ON e.employer_id = v.employer_id
                 GROUP BY e.name
